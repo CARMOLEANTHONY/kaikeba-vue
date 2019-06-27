@@ -32,7 +32,6 @@ export default {
   },
   methods: {
     submitForm() {
-      console.log(this.$refs)
       this.$refs.formControl.validate(result => {
         if (result) {
           console.log('可以提交')
