@@ -12,13 +12,8 @@ let components = [
 
 // 使用Vue.component()注册
 // components
-//   .forEach(item => {
-//     Vue.component(item.name, item.component)
-//   })
+//   .forEach(item => Vue.component(item.name, item.component))
 
 // 使用Vue.use()来注册
 components
-  .forEach(item => {
-    console.log('item', item)
-    Vue.use(item)
-  })
+  .forEach(item => Vue.use(item))
