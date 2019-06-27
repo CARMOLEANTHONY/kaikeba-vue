@@ -32,13 +32,15 @@ export default {
         .filter(item => item.prop)
         .map(item => item.validate())
 
-      Promise.all(validateFormItem)
-        .then(res => {
-          this.excuteCallback(validatedCallback, true)
-        })
-        .catch(error => {
-          this.excuteCallback(validatedCallback, false)
-        })
+      return validatedCallback
+        ? Promise.all(validateFormItem)
+          .then(res => {
+            this.excuteCallback(validatedCallback, true)
+          })
+          .catch(error => {
+            this.excuteCallback(validatedCallback, false)
+          })
+        : Promise.all(validateFormItem)
     },
 
     excuteCallback(validatedCallback, resultBoolean) {

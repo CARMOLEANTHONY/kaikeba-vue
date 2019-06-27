@@ -25,20 +25,33 @@ export default {
         password: ''
       },
       rules: {
-        userName: [{ required: true, message: "userName is required!" }],
+        userName: [{ required: true, message: "userName is required!" }, { max: 10, message: "max length is 10!" }],
         password: [{ required: true, message: "password is required!" }]
       }
     }
   },
   methods: {
     submitForm() {
-      this.$refs.formControl.validate(result => {
-        if (result) {
-          console.log('可以提交')
-        } else {
-          console.log('校验失败')
-        }
-      })
+      /**
+       * 两种方式处理， 一种直接回调， 一种Promise
+       */
+      this.$refs.formControl.validate(this.submitHandler)
+
+      // this.$refs.formControl.validate()
+      //   .then(result => {
+      //     console.log('可以提交')
+      //   })
+      //   .catch(err => {
+      //     console.log('不可以提交')
+      //   })
+    },
+
+    submitHandler(res) {
+      if (res) {
+        console.log('可以提交')
+      } else {
+        console.log('不可以提交')
+      }
     }
   }
 };
