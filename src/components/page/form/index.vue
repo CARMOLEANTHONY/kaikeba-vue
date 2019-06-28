@@ -15,7 +15,7 @@
   </div>
 </template>
 <script>
-
+import RToast from '@/components/common/popup/r-toast'
 export default {
   name: 'FormSample',
   data() {
@@ -47,11 +47,11 @@ export default {
     },
 
     submitHandler(res) {
-      if (res) {
-        console.log('可以提交')
-      } else {
-        console.log('不可以提交')
-      }
+      this.$create(RToast, {
+        title: `校验${res ? '成功' : '失败'}！`,
+        message: `${!res && '不'}可以进行提交`,
+        duration: 1000
+      }).showToast()
     }
   }
 };

@@ -1,8 +1,10 @@
 <template>
   <div class="container">
     <div class="main-item">
-      <span v-if="label">{{label}}</span>
-      <slot></slot>
+      <div class="label" v-if="label">{{label}}</div>
+      <div class="slot">
+        <slot></slot>
+      </div>
     </div>
     <div class="warning-message" v-if="message">{{message}}</div>
   </div>
@@ -26,10 +28,13 @@ export default {
     }
   },
   mounted() {
-    this.$on('validate', this.validate)
+    this.$on('validate', () => {
+      this.validate()
+    })
   },
   methods: {
     validate() {
+      // Schema 第三方校验库
       const value = this.form.model[this.prop]
       const rules = this.form.rules[this.prop]
       const description = { [this.prop]: rules }
@@ -46,9 +51,25 @@ export default {
 .container {
   margin: 0 0 10px 0;
 }
+
+.label {
+  display: inline-block;
+  width: 28%;
+  text-align: right;
+}
+.slot {
+  display: inline-block;
+  width: 70%;
+  text-align: left;
+  padding-left: 20px;
+}
 .warning-message {
   color: red;
   font-size: 14px;
   line-height: 16px;
+}
+
+button {
+  padding: 3px 5px;
 }
 </style>

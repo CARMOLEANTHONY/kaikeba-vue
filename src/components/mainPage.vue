@@ -3,6 +3,9 @@
     <p>
       <router-link to="/form">To Form Sample>>></router-link>
     </p>
+    <p>
+      <router-link to="/tree">To Tree Sample>>></router-link>
+    </p>
   </div>
 </template>
 
@@ -26,9 +29,6 @@ h2 {
 }
 p {
   text-align: center;
-  line-height: 20px;
-}
-a {
-  color: #42b983;
+  line-height: 25px;
 }
 </style>

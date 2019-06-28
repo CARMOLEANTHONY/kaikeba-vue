@@ -8,7 +8,7 @@
 export default function (eventName, data, componentName) {
   let parentComponent = this.$parent || null
 
-  componentName = componentName || this.$root
+  componentName = componentName || this.$root.name
 
   while (parentComponent) {
     if (parentComponent) {
