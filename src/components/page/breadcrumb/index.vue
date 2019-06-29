@@ -15,7 +15,8 @@ export default {
   components: { Breadcrumb },
   data() {
     return {
-      msg: ` I am first-level breadcurmb!!!`
+      msg: ` I am first-level breadcurmb!!!`,
+      timer: null
     }
   }
 }

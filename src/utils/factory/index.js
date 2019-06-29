@@ -1,11 +1,16 @@
 import Vue from 'vue'
 import Dispatch from './dispatch'
+import Broadcast from './broadcast'
 import Create from './popup'
 
 const methods = [
   {
     fnName: '$dispatch',
     fn: Dispatch
+  },
+  {
+    fnName: '$broadcast',
+    fn: Broadcast
   },
   {
     fnName: '$create',

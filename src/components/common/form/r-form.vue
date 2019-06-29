@@ -21,11 +21,6 @@ export default {
       type: Object
     }
   },
-  data() {
-    return {
-
-    }
-  },
   methods: {
     validate(validatedCallback) {
       const validateFormItem = this.$children
