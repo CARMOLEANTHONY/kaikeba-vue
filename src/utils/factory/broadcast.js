@@ -5,32 +5,30 @@
  * @param {*} data the data you wanna transfer.
  * @param {*} componentName the name of your target component, optional.
  */
-export default function (eventName, data, componentName) {
+function broadcast(eventName, data, componentName) {
   let children = this.$children
-
-  if (children.length) {
-    emitEvent(children, eventName, data, componentName)
-  }
-}
-
-function emitEvent(children, eventName, data, componentName) {
-  const len = children.length
   let stop = false
 
-  for (let i = 0; i < len; i++) {
-    const item = children[i]
+  const { length } = children
 
-    item.$emit(eventName, data)
+  if (length) {
+    for (let i = 0; i < length; i++) {
+      const item = children[i]
 
-    stop = item.$options.name === componentName
-    const nextGeneration = stop ? [] : item.$children
+      item.$emit(eventName, data)
 
-    if (stop) {
-      break
-    }
+      stop = item.$options.name === componentName
+      const nextGeneration = stop ? [] : item.$children
 
-    if (nextGeneration.length) {
-      emitEvent(nextGeneration, eventName, data, componentName)
+      if (stop) {
+        break
+      }
+
+      if (nextGeneration.length) {
+        broadcast.call(item, eventName, data, componentName)
+      }
     }
   }
 }
+
+export default broadcast
