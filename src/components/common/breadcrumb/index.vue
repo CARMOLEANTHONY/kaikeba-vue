@@ -22,9 +22,6 @@ export default {
       default: '>>>'
     }
   },
-  created() {
-    console.log(this.$route.matched)
-  },
   computed: {
     // get data from this.$route.matched
     breadcrumbData() {

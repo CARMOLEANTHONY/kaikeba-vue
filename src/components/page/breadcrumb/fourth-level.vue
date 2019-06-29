@@ -5,10 +5,10 @@
 </template>
 <script>
 export default {
-  name: 'ThirdLevelBreadcrumbSample',
+  name: 'FourthLevelBreadcrumbSample',
   data() {
     return {
-      msg: ` I am third-level breadcurmb!!!`
+      msg: ` I am fourth-level breadcurmb!!!`
     }
   }
 }
