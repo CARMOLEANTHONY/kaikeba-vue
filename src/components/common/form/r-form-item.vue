@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="main-item">
-      <div class="label" v-if="label">{{label}}</div>
+      <label v-if="label">{{label}}</label>
       <div class="slot">
         <slot></slot>
       </div>
@@ -52,11 +52,6 @@ export default {
   margin: 0 0 10px 0;
 }
 
-.label {
-  display: inline-block;
-  width: 28%;
-  text-align: right;
-}
 .slot {
   display: inline-block;
   width: 70%;

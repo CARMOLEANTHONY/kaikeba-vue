@@ -60,3 +60,11 @@ a:focus {
     color: #c00;
     text-decoration: underline;
 }
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}

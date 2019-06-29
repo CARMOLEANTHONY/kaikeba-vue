@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <p class="right" v-show="$route.path !== '/samples'">
+      <router-link to="/samples">To Main Page>>></router-link>
+    </p>
     <router-view/>
   </div>
 </template>
@@ -17,12 +20,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 </style>

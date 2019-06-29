@@ -25,7 +25,7 @@ export default {
     inputHandler(e) {
       this.$emit('input', e.target.value)
 
-      // 如果数据发生变化，通知父组件进行检验
+      // 如果数据发生变化，通知父级组件进行检验
       this.$dispatch('validate', 'start validate', 'RForm')
     }
   }

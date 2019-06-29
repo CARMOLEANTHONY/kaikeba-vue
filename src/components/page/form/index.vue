@@ -49,7 +49,7 @@ export default {
     submitHandler(res) {
       this.$create(RToast, {
         title: `校验${res ? '成功' : '失败'}！`,
-        message: `${!res && '不'}可以进行提交`,
+        message: `${res ? '' : '不'}可以进行提交`,
         duration: 1000
       }).showToast()
     }

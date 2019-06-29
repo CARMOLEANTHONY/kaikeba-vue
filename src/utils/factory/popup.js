@@ -1,8 +1,13 @@
 import Vue from 'vue'
 
-export default function (component, options) {
+/**
+ * create a instance of Vue to mount a component outside App.
+ * @param {Object} component
+ * @param {Object} props data you wanna transfer to component.
+ */
+export default function (component, props) {
   const vm = new Vue({
-    render: h => h(component, { props: options })
+    render: h => h(component, { props })
   }).$mount()
 
   // 不能在实例化的时候直接挂载在body上，vue不允许这样做。

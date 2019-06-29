@@ -1,16 +1,19 @@
 <template>
   <div class="hello">
     <p>
-      <router-link to="/form">To Form Sample>>></router-link>
+      <router-link to="/form">Go To Form Sample>>></router-link>
     </p>
     <p>
-      <router-link to="/tree">To Tree Sample>>></router-link>
+      <router-link to="/tree">Go To Tree Sample>>></router-link>
     </p>
+    <p>
+      <router-link to="/breadcrumb">Go To breadcrumb Sample>>></router-link>
+    </p>
+    <router-view/>
   </div>
 </template>
 
 <script>
-
 export default {
   name: "MainPage",
   data() {
