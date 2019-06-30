@@ -26,6 +26,11 @@ export default new Router({
       name: 'TreeSample',
       component: () => import('@/components/page/tree')
     },
+    {
+      path: '/testStore',
+      name: 'TestStore',
+      component: () => import('@/components/page/test-store')
+    },
 
     breadcrumbRouteConfiguration,
 

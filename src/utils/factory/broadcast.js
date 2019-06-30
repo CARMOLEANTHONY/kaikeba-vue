@@ -1,6 +1,6 @@
 /**
  * broadcast event from high-level components to low-level ones.
- * actually we can use provider/inject to do something like this.
+ * actually we can use provider/inject to do something like this better.
  * @param {*} eventName
  * @param {*} data the data you wanna transfer.
  * @param {*} componentName the name of your target component, optional.

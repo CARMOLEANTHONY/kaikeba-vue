@@ -9,7 +9,10 @@
     <p>
       <router-link to="/breadcrumb">Go To breadcrumb Sample>>></router-link>
     </p>
-    <router-view/>
+    <p>
+      <router-link to="/testStore">Go To Test Store Sample>>></router-link>
+    </p>
+    <router-view />
   </div>
 </template>
 
